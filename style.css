@@ -3,20 +3,18 @@ body {
   height: 100%;
   margin: 0;
 }
-/*Задаём глобальные параметры*/
+
 body {
   background: black;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-/*Делаем границу вокруг игрового поля*/
+
 canvas {
   border: 1px solid white;
 }
-
 .score{
-  
   padding: 0 auto;
   text-align: center;
   margin-bottom: 50px;
@@ -43,7 +41,6 @@ canvas {
 .hide{
   display: none;
 }
-
 
 .btn-shark{
   background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);

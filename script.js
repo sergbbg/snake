@@ -1,15 +1,15 @@
   
   let chet= 0;
     // Поле, на котором всё будет происходить, — тоже как бы переменная
-  var canvas = document.getElementById('game');
+    let canvas = document.getElementById('game');
   // Классическая змейка — двухмерная, сделаем такую же
-  var context = canvas.getContext('2d');
+  let context = canvas.getContext('2d');
   // Размер одной клеточки на поле — 16 пикселей
-  var grid = 16;
+  let grid = 16;
   // Служебная переменная, которая отвечает за скорость змейки
-  var count = 0;
+  let count = 0;
   // А вот и сама змейка
-  var snake = {
+  let snake = {
     // Начальные координаты
     x: 160,
     y: 160,
@@ -22,7 +22,7 @@
     maxCells: 4
   };
   // А это — еда. Представим, что это красные яблоки.
-  var apple = {
+  let apple = {
     // Начальные координаты яблока
     x: 320,
     y: 320
@@ -36,14 +36,16 @@
   const  btnStart = document.querySelector('.btn-start-shark');
   const  btnEnd = document.querySelector('.btn-end-shark');
  
-  let t =0;
+
+//переменная для запуска анимации
+  let workingVar =0;
  
 
 
   // Игровой цикл — основной процесс, внутри которого будет всё происходить
   function loop() {
     // Хитрая функция, которая замедляет скорость игры с 60 кадров в секунду до 15 (60/15 = 4)
-    if(t>0){
+    if(workingVar>0){
      requestAnimationFrame(loop); 
     }
     
@@ -103,7 +105,7 @@
       }
       // Проверяем, не столкнулась ли змея сама с собой
       // Для этого перебираем весь массив и смотрим, есть ли у нас в массиве змейки две клетки с одинаковыми координатами 
-      for (var i = index + 1; i < snake.cells.length; i++) {
+      for ( let i = index + 1; i < snake.cells.length; i++) {
         // Если такие клетки есть — начинаем игру заново
         if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
           // Задаём стартовые параметры основным переменным
@@ -155,14 +157,14 @@
 
   // requestAnimationFrame(loop);
   btnStart.addEventListener('click',()=>{
-     t = 100;
+    workingVar = 100;
     requestAnimationFrame(loop);
     btnStart.classList.add('hide');
     btnEnd.classList.remove('hide');
   } )
 
   btnEnd.addEventListener('click',()=>{
-  t = 0;
+    workingVar = 0;
    requestAnimationFrame(loop);
    btnStart.classList.remove('hide');
    btnEnd.classList.add('hide');
@@ -171,7 +173,7 @@
   
   const score = document.querySelector('.score');
 
-
   function Score(num){
     score.innerText =`${num}`;
   }
+
