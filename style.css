@@ -1,0 +1,55 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+/*Задаём глобальные параметры*/
+body {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*Делаем границу вокруг игрового поля*/
+canvas {
+  border: 1px solid white;
+}
+
+.score{
+  
+  padding: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 36px;
+}
+.score-block p{
+ padding-right: 5px; 
+ font-size: 36px;
+}
+
+
+.score-block{
+  width: 400px;
+  height:400px;
+  border:1px solid #fff;
+  margin-right: 50px;
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+}
+
+.hide{
+  display: none;
+}
+
+
+.btn-shark{
+  background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);
+  border-radius: 5px;
+  border:none;
+  padding: 10px 30px;
+  cursor: pointer;
+  color:#fff;
+}
